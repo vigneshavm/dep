@@ -134,7 +134,8 @@ console.log("reqobj findcmdfindcmdfindcmd",reqobj)
         "name": reqobj.name,
         "like": 0,
         "timestamp" :current,
-        "commands": reqobj.command
+        "commands": reqobj.command,
+        "commands_by": []
 
     };
 
