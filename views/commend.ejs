@@ -61,9 +61,11 @@
         <div id="commandDivToggle-<%= i %>" hidden="<%= user[i].isHidden %>" style="margin-top: 45px;">
             <input type="text" class="form-control" placeholder="Write Your Commands Here"
                    style="margin-bottom: 15px;width: calc(100% - 60px);display: inline;"
-                   id="command-input-box-id-<%= i %>"
+                   id="command-input-box-id-<%= i %>" onkeyup="postBtnEnable(<%= i %>);"
             >
-            <button class="btn btn-default btn-primary" style="width: 55px" onclick="addNewCommand(<%= i %>);"> Post
+            <button class="btn btn-default btn-primary" disabled
+                    style="width: 55px;margin-top: 0!important;height: auto;" onclick="addNewCommand(<%= i %>);"
+                    id="post-btn-id-<%= i %>"> Post
             </button>
             <% for(var j = 0; j < user[i].commands_by.length; j++) { %>
                 <p id="panel-content-updating"><b><%= user[i].commands_by[j].name %></b>
@@ -79,7 +81,22 @@
 <% } %>
 
 <script type="text/javascript">
+
     /*Added By Rabeesh Start*/
+
+    function postBtnEnable(index) {
+        var toToggle = '#command-input-box-id-' + index
+        console.log($(toToggle).val(), "Add New Command Fun")
+        var postBtnToggle = '#post-btn-id-' + index
+        if ($(toToggle).val() === '') {
+            $(postBtnToggle).attr('disabled', "disabled")
+            console.log("treu")
+        } else {
+            console.log("fals")
+            $(postBtnToggle).removeAttr("disabled");
+        }
+    }
+
     function commandsClicked(index) {
         var toToggle = '#commandDivToggle-' + index
         console.log(toToggle, "xxxxxx")
