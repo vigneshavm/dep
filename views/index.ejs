@@ -9,19 +9,6 @@
 	<link rel="javascript" href="//js/jquery.js">
 </head>
 <body>
-	<div class="reg">
-		<div class="container">
-			<div class="col-md-4">
-				<div class="row">
-				    <input type="text" id="name" placeholder="Enter name to register.."><br>
-				    <div class="error" id="name_err" style="color: red;font-size:22px;"></div>
-				    <input type="email" id="email" placeholder="Enter Email to register.."><br>
-				    <div class="error" id="email_err" style="color: red;font-size:22px;"></div>
-				    <button id=register>Register</button>
-				</div>
-			</div>
-		</div>
-    </div>
     <div id="com"></div>
 
    <script type="text/javascript">
@@ -44,6 +31,8 @@
    		
 
    	$(document).ready(function(){
+        getname();
+
 		$('#register').click(function(e){
 			var name=$("#name").val();
 			var email=$("#email").val();

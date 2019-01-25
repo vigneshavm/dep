@@ -89,7 +89,6 @@ action.prototype.find=function(request,callback){
 
     }, function(err) {
 
-        console.log("Object",Object);
 
 var data= Object;
 
@@ -132,7 +131,7 @@ console.log("reqobj findcmdfindcmdfindcmd",reqobj)
     {
         "index": 2,
         "commands_count": 0,
-        "name": "you",
+        "name": reqobj.name,
         "like": 0,
         "timestamp" :current,
         "commands": reqobj.command
@@ -148,7 +147,6 @@ console.log("reqobj findcmdfindcmdfindcmd",reqobj)
     }
 
 
-    console.log("finalData",data);
 
 
         callback(null,data);

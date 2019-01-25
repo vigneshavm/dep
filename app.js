@@ -1,7 +1,7 @@
 var express=require('express');
 var app=express();
 
-var port=3000;
+var port=4000;
 var server=app.listen(port,function(){
 	console.log('listening on port %d',port);
 });

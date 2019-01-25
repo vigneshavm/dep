@@ -4,18 +4,20 @@
 	<meta charset="utf-8">
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>commends</title>
 </head>
 <body>
 	<div class="box">
+        <input type="text" id="name" placeholder="ur name..">
+                <div id="name_err"></div>
 		<input type="text" id="command" placeholder="ur commend..">
                 <div id="cmd_err"></div>
 		<button id="add_cmd">Add Commend</button>
-        </div>
+    </div>
         
 
 
@@ -23,27 +25,22 @@
 
     <div style="width: 50%;padding-left: 50px;padding-top: 10px">
 
-
         <div class="row " >
-            <i class="fa fa-user" style="font-size: 13px"></i>
+            	            <i class="fa fa-user" style="font-size: 13px"></i>
 
-            <p style="display: inline"><%= user[i].name %></p>
-        </div>
-
-
-
+            	            <p style="display: inline"><%= user[i].name %></p>
+            	        </div>
 
         <div  class="test">
-            <p>  <%= user[i].commands %></p>
+            <p><%= user[i].commands %></p>
         </div>
 
         <div>
 
 
 
+
             <span class="time-left"> Posted <%= user[i].timeago %></span>
-
-
 
 
 
@@ -68,8 +65,7 @@
         </div>
 
 
-
-<br><p style="text-align: center">-----------------------------</p>
+        <br><p style="text-align: center">-----------------------------</p>
 
 
 
@@ -123,15 +119,20 @@ function actOnPost(event)
 
 //                        getcmdall();
                         $('#add_cmd').click(function(){
+                            var name=$("#name").val();
                                 var command=$("#command").val();
 
                                 var cmderr=true;
+                                if(name=="" || name==null){
+                                        cmderr=false;
+                                        $("#cmd_err").text("plese Enter UR commend");
+                                }
                                 if(command=="" || command==null){
                                         cmderr=false;
                                         $("#cmd_err").text("plese Enter UR commend");
                                 }
                                 if(cmderr=true){
-                                        var cmddata={'command':command};
+                                        var cmddata={'name':name,'command':command};
 
                                         $.ajax({
                                                 type:'GET',
@@ -175,12 +176,13 @@ function actOnPost(event)
             color: darkblue;
         }
 		#add_cmd{
-			width: 10%;
-                        position: absolute;
-                        margin-top:8rem;
-                        margin-left: 1rem;
-                        border: none;
-                        border-radius: 4px;
+			width: 20%;
+            height: 5%;
+            position: absolute;
+            margin-top:8rem;
+            margin-left: -15rem;
+            border: none;
+            border-radius: 4px;
 		}
                 .box{
                 	margin-top: 1rem;
@@ -194,8 +196,20 @@ function actOnPost(event)
 
                 #command{
                         position: absolute;
-                	margin-top: 7.6rem;
-                        margin-left: -17rem;
+                	margin-top: 2.2rem;
+                        margin-left: 0rem;
+                        width: 18%;
+                        height: 7.5%;
+                        font-size: 20px;
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                }
+                #name{
+                        position: absolute;
+                    margin-top: 12rem;
+                        margin-left: -30rem;
                         width: 13%;
                         height: 6%;
                         display: inline-block;
@@ -236,6 +250,7 @@ function actOnPost(event)
                                margin-top: 5rem;
                                margin-left: -10rem;
                         }
+
                         #add_cmd{
                                 margin-top: 5.5rem;
                         }

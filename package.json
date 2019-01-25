@@ -11,7 +11,9 @@
   "dependencies": {
     "async": "^2.6.1",
     "ejs": "^2.6.1",
-    "express": "^4.16.2",
-    "mongodb": "^3.1.13"
+    "express": "^4.16.4",
+    "mongodb": "^3.1.13",
+    "node-modules": "^1.0.1",
+    "package.json": "^2.0.1"
   }
 }
