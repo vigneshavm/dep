@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Coding Test</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="//css/style.css"> -->
+	<link rel="javascript" href="//js/jquery.js">
+</head>
+<body>
+	<div class="reg">
+		<div class="container">
+			<div class="col-md-4">
+				<div class="row">
+				    <input type="text" id="name" placeholder="Enter name to register.."><br>
+				    <div class="error" id="name_err" style="color: red;font-size:22px;"></div>
+				    <input type="email" id="email" placeholder="Enter Email to register.."><br>
+				    <div class="error" id="email_err" style="color: red;font-size:22px;"></div>
+				    <button id=register>Register</button>
+				</div>
+			</div>
+		</div>
+    </div>
+    <div id="com"></div>
+
+   <script type="text/javascript">
+
+   	function getname(){
+   		$.ajax({
+   			type:'GET',
+   			url:'/find',
+   			success:function(data){
+   				console.log(data);
+   				$('.reg').remove();
+   				// $('#com').append(`<h4>Hai ${data[0].name} Your Registration Success..</h4> 
+		     //                      	<input type="text" id="command" placeholder="ur commend..">
+       //          					<div id="cmd_err"></div>
+							// 		<button id="add_cmd">Add Commend</button>`);
+				$('#com').append(data);
+   			}
+   		});
+   	};
+   		
+
+   	$(document).ready(function(){
+		$('#register').click(function(e){
+			var name=$("#name").val();
+			var email=$("#email").val();
+
+			var err_msg=true;
+
+			if(name==null || name==""){
+                    err_msg = false;
+                    $("#name_err").text("Please Enter UR Name..");
+                    window.event.preventDefault();
+                }
+	        if(email==null || email==""){
+                    err_msg = false;
+                    $("#email_err").text("Please Enter UR email..");
+                    window.event.preventDefault();
+                }
+            if(err_msg==true){
+            	$("#name_err").text("");
+            	$("#email_err").text("");
+		        var regdata={'name':name,'email':email};
+		        console.log("regdata",regdata);
+		        $.ajax({
+		        	type:'GET',
+		        	data:regdata,
+		        	datatype:'json',
+		        	url:'/register',
+		        	success:function(data){
+
+		        	},
+		        	failiure:function(err){
+		        		alert("failiure");
+		        	},
+		        });
+		        getname();
+	        }
+	        e.preventDefault();
+        
+		});
+	// 	$('#add_cmd').click(function(){
+	// 		var command=$("#command").val();
+
+ //            var cmderr=true;
+	// 		if(command=="" || command==null){
+	// 			cmderr=false;
+	// 			$("#cmd_err").text("plese Enter UR commend");
+ //            }
+ //            if(cmderr=true){
+ //            	var cmddata={'command':command};
+                
+ //                $.ajax({
+	// 	        	type:'GET',
+	// 	        	data:cmddata,
+	// 	        	datatype:'json',
+	// 	        	url:'/command',
+	// 	        	success:function(data){
+
+	// 	        	},
+	// 	        	failiure:function(err){
+	// 	        		alert("failiure");
+	// 	        	},
+	// 	        });
+ //            }
+	// 	});
+
+	});
+   </script>
+
+   <style type="text/css">
+	   	button{
+		width: 100px;
+		height: 30px;
+		background-color: lightblue;
+        margin-top: 2rem;
+	    }
+	    #name{
+	    	margin-top: 2rem;
+	    	width: 250px;
+	    	height: 50px;
+	    	font-size: 20px;
+	    }
+	    #email{
+	    	margin-top: 2rem;
+	    	width: 250px;
+	    	height: 50px;
+	    	font-size: 20px;
+	    }
+	    .reg{
+	    	/*position: absolute;*/
+			/*width: 30%;*/
+			/*height: 40%;*/
+			background-color: #98FB98;
+			text-align: center;
+	    }
+	    @media screen and (max-width: 678px){
+	    	.reg{
+	    		width: 100%;
+	    		margin-top: -0.5rem;
+	    		margin-left: 0.5rem;
+	    	}
+	    	#name{
+	    		margin-top: 5rem;
+	    		width: 50%;
+	    		height: 10%;
+	    		font-size: 45px;
+	    	}
+	    	#email{
+	    		margin-top: 5rem;
+	    		width: 50%;
+	    		height: 10%;
+	    		font-size: 45px;
+	    	}
+	    	#register{
+	    		width: 35%;
+	    		height: 10%;
+	    		font-size: 40px;
+	    	}
+	    	.error{
+	    		color: blue;
+	    	}
+	        
+   </style>
+</body>
+</html>

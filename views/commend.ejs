@@ -1,0 +1,253 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>commends</title>
+</head>
+<body>
+	<div class="box">
+		<input type="text" id="command" placeholder="ur commend..">
+                <div id="cmd_err"></div>
+		<button id="add_cmd">Add Commend</button>
+        </div>
+        
+
+
+    <% for(var i=0; i < user.length; i++) { %>
+
+    <div style="width: 50%;padding-left: 50px;padding-top: 10px">
+
+        <p><%= user[i].name %></p>
+
+        <div  class="test">
+            <p><%= user[i].commands %></p>
+        </div>
+
+        <div>
+
+
+
+            <span class="time-left"><%= user[i].timeago %></span>
+
+
+
+
+
+
+            <div class="row time-right" >
+                <i class="fa fa-comment " style="font-size: 20px" >
+                </i>
+                <span ><%= user[i].commands_count %> Commends</span>
+
+            </div>
+
+
+            <div class="row time-right" style="padding-right: 60px">
+
+                <i  class="fa fa-heart-o" aria-hidden="true" style="font-size: 20px" onclick="actOnPost(event);"
+                        data-post-id="<%= user[i].index %>">
+                </i>
+
+                <span id="likes-count-<%= user[i].index %>"><%= user[i].like %></span>
+            </div>
+
+        </div>
+
+
+
+<br><p>-----------------------------</p>
+
+
+
+    </div>
+    <% } %>
+
+        <script type="text/javascript">
+
+            function GetContent(x) {
+
+
+                console.log(x,"xxxxxxxxx")
+            }
+
+            $('div.test').click(function(){
+                GetContent(this);
+            });
+
+            function ShowOld(x) {
+
+
+                console.log(x,"xxxxxxxxx")
+            }
+            function myFunction(x) {
+                x.classList.toggle("fa-thumbs-down");
+
+                console.log(x.target,"xxxxxxxxx")
+
+            }
+
+
+
+
+
+
+
+function actOnPost(event)
+{
+
+    var  n=0;
+    var postId = event.target.dataset.postId;
+    var action = event.target.textContent.trim();
+
+
+    document.querySelector('#likes-count-' + postId).textContent++;
+
+
+}
+
+                $(document).ready(function(){
+
+//                        getcmdall();
+                        $('#add_cmd').click(function(){
+                                var command=$("#command").val();
+
+                                var cmderr=true;
+                                if(command=="" || command==null){
+                                        cmderr=false;
+                                        $("#cmd_err").text("plese Enter UR commend");
+                                }
+                                if(cmderr=true){
+                                        var cmddata={'command':command};
+
+                                        $.ajax({
+                                                type:'GET',
+                                                data:cmddata,
+                                                datatype:'json',
+                                                url:'/command',
+                                                success:function(data){
+                                                    document.location.reload(true)
+                                                },
+                                                failiure:function(err){
+                                                        alert("failiure");
+                                                }
+                                        });
+
+                                }
+//                                getcmd();
+
+                        });
+                });
+        </script>
+
+	<style type="text/css">
+        .time-left {
+            float: left;
+            color: #999;
+        }
+
+        .time-right {
+            float: right;
+            color: #aaa;
+        }
+
+
+        .fa {
+            font-size: 50px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .fa:hover {
+            color: darkblue;
+        }
+		#add_cmd{
+			width: 10%;
+                        position: absolute;
+                        margin-top:8rem;
+                        margin-left: 1rem;
+                        border: none;
+                        border-radius: 4px;
+		}
+                .box{
+                	margin-top: 1rem;
+                	margin-left: 2rem;
+                	margin-right: 2rem;
+                	background-color: #FFC0CB;
+                	width: 97%;
+                	height: 150px;
+                	text-align: center;
+                }
+
+                #command{
+                        position: absolute;
+                	margin-top: 7.6rem;
+                        margin-left: -17rem;
+                        width: 13%;
+                        height: 6%;
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                }
+                h4{
+                        position: absolute;
+                	margin-top: 3rem;
+                        margin-left: 50rem;
+                }
+                #cmd_err{
+                        position: relative;
+
+                }
+                table{
+                        margin-left: 7rem;
+                        margin-top: 2rem;
+                        width: 40%;
+                        background-color: lightblue;
+                        font-style: italic;
+                }
+                .findallcmd{
+                        margin-left:75rem;
+                        margin-top: -2.2rem;
+                        position: fixed;
+                        font-style: italic;
+                        font-weight: bold;
+                }
+                @media screen and (min-width: 678px) and (max-width: 768px){
+                        .box{
+                                margin-left: 1rem;
+                        }
+                        #command{
+                               height: 3%;
+                               font-size: 20px;
+                               margin-top: 5rem;
+                               margin-left: -10rem;
+                        }
+                        #add_cmd{
+                                margin-top: 5.5rem;
+                        }
+                        h4{
+                                margin-left: 20rem;
+                                margin-top: 2rem;
+                        }
+                }
+	</style>
+</body>
+</html>
