@@ -43,7 +43,7 @@
             <div class="row time-right">
                 <i class="fa fa-comment " style="font-size: 20px">
                 </i>
-                <span onclick="commandsClicked(<%= i %>);" style="cursor: pointer;"><%= user[i].commands_count %> Commends</span>
+                <span onclick="commandsClicked(<%= i %>);" style="cursor: pointer;"><%= user[i].commands_by.length %> Commends</span>
 
             </div>
 
@@ -94,7 +94,26 @@
     function addNewCommand(index) {
 
         var toToggle = '#command-input-box-id-' + index
-        console.log($(toToggle).val(), "Add New Command Fun")
+        console.log( $(toToggle).val(), "Add New Command Fun" ,index)
+
+        var cmddata ={
+            index : index,
+            command : $(toToggle).val()
+        };
+        $.ajax({
+            type: 'GET',
+            data: cmddata,
+            datatype: 'json',
+            url: '/findallcmd',
+            success: function (data) {
+                document.location.reload(true)
+            },
+            failiure: function (err) {
+                alert("failiure");
+            }
+        });
+
+
     }
 
     /*Added By Rabeesh End*/

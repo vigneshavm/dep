@@ -47,9 +47,6 @@ UIRoutes.prototype.init=function(){
       var request=req.query;
         console.log("insert request",request);
           self.actionInstance.findcmd(request,function(err,result){
-
-
-
               res.render('commend.ejs',{user:result});
           });
 

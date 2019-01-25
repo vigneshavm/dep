@@ -160,12 +160,26 @@ action.prototype.findallcmd=function(request,callback){
     var self=this;
 
 
-    var resultArray =[
-        { name: 'viiki', command: 'hi' },
-        { name: 'vignesh'   , command: 'hello' }
-    ];
+    async.forEachOf(Object, function (value, key, callback) {
 
+console.log(key,"key");
 
-        callback(null,Object);
+        console.log(  value.commands_by)
+
+        var m=value.commands_by
+
+        if (key == request.index) {
+            m.push( {
+                "name": 'You',
+                "command": request.command
+            })
+        }
+        value.commands_by == m
+        callback(null,null);
+
+    }, function(err) {
+
+        callback(null, Object);
+    })
 
 };
