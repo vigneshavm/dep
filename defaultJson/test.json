@@ -1,63 +1,135 @@
 [
-    {
-        "index": 0,
-        "commands_count": 24,
-        "name": "Lucy Marsh",
-        "like": 6,
-        "timestamp" :1548398293315,
-        "commands": "Cillum fugiat officia reprehenderit est ad ullamco sunt laboris ipsum. Veniam in ut pariatur enim quis eu veniam dolor qui in enim occaecat irure. Anim minim consequat proident est dolore excepteur laboris ea eu aliquip eiusmod nulla nulla. Irure eiusmod proident do minim ad veniam eu adipisicing. Reprehenderit adipisicing fugiat et sunt cupidatat.\r\n"
-
-    },
-    {
-        "index": 1,
-        "commands_count": 35,
-        "name": "Willis Holland",
-        "like": 7,
-        "timestamp" :1548380003315,
-        "commands": "Est consequat ea elit elit amet minim laborum. Id mollit commodo do proident in. In dolore officia aute non est qui tempor elit aliquip aute Lorem adipisicing. Deserunt voluptate ex ut ipsum voluptate officia culpa ad. Et deserunt nisi incididunt mollit anim irure Lorem. Pariatur mollit consectetur nostrud esse. Commodo ad mollit in aliqua nisi mollit exercitation veniam amet sit quis quis tempor.\r\n"
-
-    },
-    {
-        "index": 2,
-        "commands_count": 38,
-        "name": "Howard Henson",
-        "like": 3,
-        "timestamp" :1548386133315,
-        "commands": "Id ut fugiat qui laborum velit. Magna mollit nostrud eiusmod ut occaecat aliquip et qui sint cillum. Incididunt aute id laborum sint aute. Sint labore deserunt non ut voluptate ullamco. Pariatur officia Lorem eiusmod commodo ex ullamco aliquip magna quis elit ex officia elit commodo. Non exercitation ullamco esse nisi occaecat sunt nisi. Qui velit deserunt occaecat consectetur duis excepteur tempor enim excepteur.\r\n"
-
-    },
-    {
-        "index": 3,
-        "commands_count": 27,
-        "name": "Lana Frye",
-        "like": 7,
-        "timestamp" :1548355123315,
-        "commands": "Duis nulla duis duis dolor anim proident cupidatat est enim ad deserunt nisi mollit. Excepteur cupidatat laboris adipisicing ex eiusmod laborum labore qui sunt. Eiusmod cupidatat excepteur duis elit ut Lorem. Dolor sint cupidatat laboris magna exercitation ipsum in occaecat labore tempor exercitation excepteur consequat incididunt. Eu esse non cupidatat sit voluptate elit labore veniam veniam in incididunt.\r\n"
-
-    },
-    {
-        "index": 4,
-        "commands_count": 21,
-        "name": "Quinn Middleton",
-        "like": 3,
-        "timestamp" :1548354123315,
-        "commands": "Officia nostrud cillum excepteur officia sit proident anim sit ipsum amet sint nostrud laborum. Consequat Lorem enim consectetur velit amet cupidatat nisi ut id cupidatat Lorem. Laborum nostrud qui commodo Lorem cupidatat exercitation sit aliquip exercitation velit consequat minim eu aute. Eu reprehenderit voluptate minim magna anim culpa laboris deserunt mollit laboris.\r\n"
-
-    },
-    {
-        "index": 5,
-        "commands_count": 28,
-        "name": "Yvonne Malone",
-        "like": 6,
-        "timestamp" :1548381523315,
-        "commands": "Sit dolor anim eu sunt reprehenderit esse laboris enim reprehenderit esse exercitation sit aute. Lorem quis eu fugiat eu. Non proident ullamco id id. Labore aliqua amet amet dolor sunt sit reprehenderit sint culpa ex incididunt fugiat proident. Amet laboris ex minim pariatur laboris. Laborum adipisicing deserunt culpa qui ex. Aliquip sint magna tempor Lorem officia ea anim labore."
-    },
-    {
-        "index": 5,
-        "commands_count": 28,
-        "name": "csdcdsc Malone",
-        "like": 6,
-        "timestamp" :1548361000315,
-        "commands": "Sit dolor anim eu sunt reprehenderit esse laboris enim reprehenderit esse exercitation sit aute. Lorem quis eu fugiat eu. Non proident ullamco id id. Labore aliqua amet amet dolor sunt sit reprehenderit sint culpa ex incididunt fugiat proident. Amet laboris ex minim pariatur laboris. Laborum adipisicing deserunt culpa qui ex. Aliquip sint magna tempor Lorem officia ea anim labore."
-    }
+  {
+    "index": 0,
+    "commands_count": 24,
+    "isHidden": true,
+    "commands_by": [
+      {
+        "name": "cdc",
+        "command": "command256"
+      },
+      {
+        "name": "name1",
+        "command": "command1"
+      }
+    ],
+    "name": "Lucy Marsh",
+    "like": 6,
+    "timestamp": 1548354193315,
+    "commands": "Cillum fugiat officia reprehenderit est ad ullamco sunt laboris ipsum. Veniam in ut pariatur enim quis eu veniam dolor qui in enim occaecat irure. Anim minim consequat proident est dolore excepteur laboris ea eu aliquip eiusmod nulla nulla. Irure eiusmod proident do minim ad veniam eu adipisicing. Reprehenderit adipisicing fugiat et sunt cupidatat.\r\n"
+  },
+  {
+    "index": 1,
+    "isHidden": true,
+    "commands_count": 35,
+    "commands_by": [
+      {
+        "name": "name2",
+        "command": "command2"
+      },
+      {
+        "name": "cdccdc",
+        "command": "command112"
+      }
+    ],
+    "name": "Willis Holland",
+    "like": 7,
+    "timestamp": 1548354143315,
+    "commands": "Est consequat ea elit elit amet minim laborum. Id mollit commodo do proident in. In dolore officia aute non est qui tempor elit aliquip aute Lorem adipisicing. Deserunt voluptate ex ut ipsum voluptate officia culpa ad. Et deserunt nisi incididunt mollit anim irure Lorem. Pariatur mollit consectetur nostrud esse. Commodo ad mollit in aliqua nisi mollit exercitation veniam amet sit quis quis tempor.\r\n"
+  },
+  {
+    "index": 2,
+    "isHidden": true,
+    "commands_count": 38,
+    "commands_by": [
+      {
+        "name": "cdc",
+        "command": "command256"
+      },
+      {
+        "name": "cdccdc",
+        "command": "command112"
+      }
+    ],
+    "name": "Howard Henson",
+    "like": 3,
+    "timestamp": 1548354133315,
+    "commands": "Id ut fugiat qui laborum velit. Magna mollit nostrud eiusmod ut occaecat aliquip et qui sint cillum. Incididunt aute id laborum sint aute. Sint labore deserunt non ut voluptate ullamco. Pariatur officia Lorem eiusmod commodo ex ullamco aliquip magna quis elit ex officia elit commodo. Non exercitation ullamco esse nisi occaecat sunt nisi. Qui velit deserunt occaecat consectetur duis excepteur tempor enim excepteur.\r\n"
+  },
+  {
+    "index": 3,
+    "isHidden": true,
+    "commands_count": 27,
+    "commands_by": [
+      {
+        "name": "cdc",
+        "command": "command256"
+      },
+      {
+        "name": "cdccdc",
+        "command": "command112"
+      }
+    ],
+    "name": "Lana Frye",
+    "like": 7,
+    "timestamp": 1548354123315,
+    "commands": "Duis nulla duis duis dolor anim proident cupidatat est enim ad deserunt nisi mollit. Excepteur cupidatat laboris adipisicing ex eiusmod laborum labore qui sunt. Eiusmod cupidatat excepteur duis elit ut Lorem. Dolor sint cupidatat laboris magna exercitation ipsum in occaecat labore tempor exercitation excepteur consequat incididunt. Eu esse non cupidatat sit voluptate elit labore veniam veniam in incididunt.\r\n"
+  },
+  {
+    "index": 4,
+    "isHidden": true,
+    "commands_count": 21,
+    "commands_by": [
+      {
+        "name": "cdc",
+        "command": "command256"
+      },
+      {
+        "name": "cdccdc",
+        "command": "command112"
+      }
+    ],
+    "name": "Quinn Middleton",
+    "like": 3,
+    "timestamp": 1548354123315,
+    "commands": "Officia nostrud cillum excepteur officia sit proident anim sit ipsum amet sint nostrud laborum. Consequat Lorem enim consectetur velit amet cupidatat nisi ut id cupidatat Lorem. Laborum nostrud qui commodo Lorem cupidatat exercitation sit aliquip exercitation velit consequat minim eu aute. Eu reprehenderit voluptate minim magna anim culpa laboris deserunt mollit laboris.\r\n"
+  },
+  {
+    "index": 5,
+    "isHidden": true,
+    "commands_count": 28,
+    "name": "Yvonne Malone",
+    "commands_by": [
+      {
+        "name": "cdc",
+        "command": "command256"
+      },
+      {
+        "name": "cdccdc",
+        "command": "command112"
+      }
+    ],
+    "like": 6,
+    "timestamp": 1548354113315,
+    "commands": "Sit dolor anim eu sunt reprehenderit esse laboris enim reprehenderit esse exercitation sit aute. Lorem quis eu fugiat eu. Non proident ullamco id id. Labore aliqua amet amet dolor sunt sit reprehenderit sint culpa ex incididunt fugiat proident. Amet laboris ex minim pariatur laboris. Laborum adipisicing deserunt culpa qui ex. Aliquip sint magna tempor Lorem officia ea anim labore."
+  },
+  {
+    "index": 5,
+    "isHidden": true,
+    "commands_count": 28,
+    "name": "csdcdsc Malone",
+    "commands_by": [
+      {
+        "name": "cdc",
+        "command": "command256"
+      },
+      {
+        "name": "cdccdc",
+        "command": "command112"
+      }
+    ],
+    "like": 6,
+    "timestamp": 1548354103315,
+    "commands": "Sit dolor anim eu sunt reprehenderit esse laboris enim reprehenderit esse exercitation sit aute. Lorem quis eu fugiat eu. Non proident ullamco id id. Labore aliqua amet amet dolor sunt sit reprehenderit sint culpa ex incididunt fugiat proident. Amet laboris ex minim pariatur laboris. Laborum adipisicing deserunt culpa qui ex. Aliquip sint magna tempor Lorem officia ea anim labore."
+  }
 ]
